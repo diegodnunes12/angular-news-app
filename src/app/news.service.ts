@@ -15,13 +15,13 @@ export class NewsService {
    * getNews
    * Get all news
    */
-  getNews() {
-    return this.httpClient.get(`http://newsapi.org/v2/top-headlines?sources=google-news-br&apiKey=${this.API_KEY}`)
+  getNews(source: string) {
+    return this.httpClient.get(`http://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${this.API_KEY}`)
             .pipe(
               map( (news:any) => news.articles)
             );
   }
 
-  
+  /* http://newsapi.org/v2/everything?q=corinthians&apiKey=8d5ce8ec7cb94f9f9782d7914242562b */
 
 }

@@ -1,17 +1,48 @@
 <section>
     <div class="container">
         <div class="row">
-            <div class="col-4" *ngFor="let new of news">
-                <div class="card">
-                    <img src="{{new.urlToImage}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">{{new.title}}</h5>
-                      <p class="card-text">
-                          {{new.description}}
-                      </p>
-                      <a href="{{new.url}}" target="_blank" class="btn btn-primary">Leia Mais</a>
+            <div class="col-9">
+                <div class="card mb-3" *ngFor="let new of news">
+                    <div class="row no-gutters">
+                      <div class="col-md-4">
+                        <img src="{{new.urlToImage}}" class="card-img" alt="...">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title">{{new.title}}</h5>
+                          <p class="card-text">
+                            {{new.description}}
+                          </p>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                          <a href="{{new.url}}" target="_blank" class="btn btn-primary">Leia Mais</a>
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <a routerLink="/globo">
+                            Globo
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a routerLink="/info-money">
+                            InfoMoney
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a routerLink="/blasting-news-br">
+                            Blasting News
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a routerLink="/bbc-news">
+                            BBC News
+                        </a>
+                    </li>
+                  </ul>
             </div>
         </div>
     </div>

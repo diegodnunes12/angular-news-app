@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 import { NewsListComponent } from './news-list/news-list.component';
 
 const routes: Routes = [
-  { path: '', component: NewsListComponent }
+  { path: ':source', component: NewsListComponent }
 ];
 
 @NgModule({

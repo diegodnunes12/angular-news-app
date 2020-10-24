@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { NewsService } from '../news.service';
 
 @Component({
@@ -8,16 +9,20 @@ import { NewsService } from '../news.service';
 })
 export class NewsListComponent implements OnInit {
   news: any;
+  source: string;
 
-  constructor(private newsService: NewsService) { }
+  constructor(private router: ActivatedRoute, private newsService: NewsService) { }
 
   ngOnInit(): void {
-    this.newsService.getNews().subscribe(
-      (news:any) => {
-        this.news = news;
-        console.log(this.news);
-      }
-    );
+    this.router.paramMap.subscribe( params => {
+      this.source = params.get('source');
+      this.newsService.getNews(this.source).subscribe(
+        (news:any) => {
+          this.news = news;
+          console.log(this.news);
+        }
+      );
+    })    
   }
 
 }
