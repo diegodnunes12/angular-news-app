@@ -1,1 +1,18 @@
-<p>news-list works!</p>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-4" *ngFor="let new of news">
+                <div class="card">
+                    <img src="{{new.urlToImage}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{new.title}}</h5>
+                      <p class="card-text">
+                          {{new.description}}
+                      </p>
+                      <a href="{{new.url}}" target="_blank" class="btn btn-primary">Leia Mais</a>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</section>
