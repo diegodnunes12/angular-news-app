@@ -16,7 +16,7 @@ export class NewsService {
    * Get all news
    */
   getNews(source: string) {
-    return this.httpClient.get(`http://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${this.API_KEY}`)
+    return this.httpClient.get(`https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${this.API_KEY}`)
             .pipe(
               map( (news:any) => news.articles)
             );
