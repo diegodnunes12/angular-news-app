@@ -6,3 +6,17 @@ header{
     font-weight: 700;
     font-size: 1.5em;
 }
+
+a:hover{
+    text-decoration: none!important;
+}
+
+a h5 {
+    color:#555;
+    text-decoration: none;
+}
+
+a:hover h5{
+    color:#222;
+    text-decoration: none;
+}
